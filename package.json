@@ -1,0 +1,22 @@
+{
+    "name": "note",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "vuepress dev",
+        "docs:build": "vuepress build docs"
+    },
+    "repository": {
+        "type": "git",
+        
+        "url": "git+https://github.com/fakaka/Note.git"
+    },
+    "author": "MJ",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/fakaka/Note/issues"
+    },
+    "homepage": "https://github.com/fakaka/Note#readme"
+}
