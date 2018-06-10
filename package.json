@@ -10,7 +10,6 @@
     },
     "repository": {
         "type": "git",
-        
         "url": "git+https://github.com/fakaka/Note.git"
     },
     "author": "MJ",
@@ -18,5 +17,8 @@
     "bugs": {
         "url": "https://github.com/fakaka/Note/issues"
     },
-    "homepage": "https://github.com/fakaka/Note#readme"
+    "homepage": "https://github.com/fakaka/Note#readme",
+    "dependencies": {
+        "vuepress": "^0.10.1"
+    }
 }
