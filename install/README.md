@@ -7,4 +7,23 @@
 - [ActiveMQ](./ActiveMQ.md)
 - [Solr](./Solr.md)
 - [Tomcat-集群](./Tomcat-集群.md)
+- [travis-ci](./travis-ci.md)
+
+
+# Todo
+
+- linux的安装
+    - [ ] centos
+    - [ ] 乌班图
+- [ ] jdk的安装
+- [ ] mysql
+- [ ] tomcat
+- [ ] nginx
+- [ ] svn
+- [ ] git
+- [ ] redis
+- [ ] active
+- [ ] windows下maven私服
+- [ ] MongoDB
+- [ ] Solr
 
