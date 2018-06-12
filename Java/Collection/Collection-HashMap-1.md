@@ -1,9 +1,5 @@
 # Collection - HashMap - 原理
 
-## 
-
-
-
 
 ## JDK8
 
@@ -11,7 +7,7 @@
 
 ## 常见问题
 
-### java中fail-fast 和 fail-safe的区别
+### java 中 fail-fast 和 fail-safe的区别
 
 fail-fast  
 机制在遍历一个集合时，当集合结构被修改，会抛出Concurrent Modification Exception。

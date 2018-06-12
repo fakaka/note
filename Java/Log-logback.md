@@ -14,8 +14,9 @@ logback-access 是为了集成 Servlet 环境而准备的，可提供 HTTP-acces
 
 ### appliacation.properties
 这是最简便的方法，默认级别是info，要改级别的话还要在 `appliacation.properties` 里增加一行 
-
-    logging.level.org.springframework.web=INFO
+``` bash
+logging.level.org.springframework.web=INFO
+```
 
 ### 配置 logback-spring.xml
 
@@ -42,7 +43,6 @@ private Logger logger =  LoggerFactory.getLogger(this.getClass());
     logger.info("hello world");
 }
 ```
-
 
 ## logback 配置详解
 

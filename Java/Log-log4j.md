@@ -6,11 +6,11 @@
 ### 创建并设置log4j.properties
 
 设置级别
-
-    log4j.rootLogger = debug,stdout,D,E
-
-输出信息到控制抬
+``` bash
+log4j.rootLogger = debug,stdout,D,E
 ```
+输出信息到控制抬
+``` bash
 log4j.appender.stdout = org.apache.log4j.ConsoleAppender
 log4j.appender.stdout.Target = System.out
 log4j.appender.stdout.layout = org.apache.log4j.PatternLayout
@@ -18,7 +18,7 @@ log4j.appender.stdout.layout.ConversionPattern = [%-5p] %d{yyyy-MM-dd HH:mm:ss,S
 ```
 
 输出 DEBUG 级别以上的日志到 E:/logs/debug.log
-```
+``` bash
 log4j.appender.D = org.apache.log4j.DailyRollingFileAppender
 log4j.appender.D.File = E:/logs/debug.log
 log4j.appender.D.Append = true
@@ -29,7 +29,7 @@ log4j.appender.D.layout.ConversionPattern = %-d{yyyy-MM-dd HH:mm:ss}  [ %t:%r ] 
 
 
 输出 ERROR 级别以上的日志到 E:/logs/error.log
-```
+``` bash
 log4j.appender.E = org.apache.log4j.DailyRollingFileAppender
 log4j.appender.E.File = E:/logs/error.log 
 log4j.appender.E.Append = true

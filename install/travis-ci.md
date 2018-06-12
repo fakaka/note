@@ -6,7 +6,7 @@
 
 ## 二、用 GitHub 帐号登录
 
-## 三、来到 [Profile页面](https://travis-ci.org/profile/fakaka)
+## 三、来到 Profile页面
 
 1. 打开页面 https://travis-ci.org/profile/fakaka
 2. 打开需要 ci 的仓库
