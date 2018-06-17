@@ -1,18 +1,20 @@
-# Vue-cli
+# Vue-cli 3.x
 
-## 使用Vue-cli
+## 使用 Vue-cli 2.0
 使用vue官方的脚手架工具创建vue项目
-**需要环境nodejs和npm**
+---
+需要环境nodejs和npm
+---
 
-1\\. 安装vue-cli  
+### 1. 安装vue-cli  
 
     npm install vue-cli -g
 
-2\\. 使用vue-cli创建项目
+### 2. 使用vue-cli创建项目
 
     vue init webpack <project-name>
     
-3\\. 运行项目
+### 3. 运行项目
     
 先进入目录    
 

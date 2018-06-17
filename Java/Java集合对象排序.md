@@ -1,4 +1,3 @@
-
 # Java集合对象排序
 ---
 
@@ -15,25 +14,25 @@ java.util.Collections.sort(java.util.List, java.util.Comparator)
 ``` java
 public class Player implements Comparable<Player>{  
 private String name;  
-        private int age;  
+    private int age;  
 
-        public Player(String name, int age){  
-        this.name=name;  
-        this.age=age;  
-        }  
+    public Player(String name, int age){  
+    this.name=name;  
+    this.age=age;  
+    }  
 
-        public int getAge(){  
-        return age;  
-        }  
+    public int getAge(){  
+    return age;  
+    }  
 
-        public void setAge(int age){  
-        this.age = age;  
-        }  
-        //实现接口方法，将来排序的时候sort看正负数还是零来进行判断大小   
-        @Override
-        public int compareTo(Player player){  
-            return this.getAge() - player.getAge();  
-        }  
+    public void setAge(int age){  
+    this.age = age;  
+    }  
+    //实现接口方法，将来排序的时候sort看正负数还是零来进行判断大小   
+    @Override
+    public int compareTo(Player player){  
+        return this.getAge() - player.getAge();  
+    }  
 }
 ```
 Comparable接口默认是按照自然顺序进行排列的，当然，你可以出其不意地直接将compareTo方法反着实现，也可以，只是约定上不要这样，你不混淆，别人可能会混淆的。都按照约定来，就不太容易混乱。所以Comparator其实是当你不满意自然排序的时候，或者说简单的自然排序无法实现你想要的排序的时候，比如你想按照数值的绝对值大小来进行排序，显然就没法用Comparable，你得自己写一个Comparator的实现类，实现compare方法，按照你想要的方式返回正数负数或者零。
@@ -52,45 +51,45 @@ Map遍历的时候要使用一个东西叫做Map.Entry，假如你有一个Map�
 
 ``` java
 public class MapSort{  
-    public static void main(String[] args){  
-        Map<String, Player> map = new HashMap<String, Player>();  
-        Player p1 = new Player("John", 1000);  
-        Player p2 = new Player("Ben", 3000);  
-        Player p3 = new Player("Jack", 2000);  
-        map.put(p1);  
-        map.put(p2);  
-        map.put(p3);  
-        //将Map里面的所以元素取出来先变成一个set，然后将这个set装到一个list里面  
-        List<Map.Entry<String, Player>> list = new ArrayList<Map.Entry<String, Player>>(map.entrySet());  
-        //定义一个comparator  
-        Comparator<Map.Entry<String, Player>> comparator = new Comparator<Map.Entry<String, Player>>(){  
-                [@Override](/user/Override)  
-                public int compare(Entry<String, Player> p1, Entry<String, Player> p2){  
-                        //之所以使用减号，是想要按照分数从高到低来排列  
-                        return -(p1.getValue().score - p2.getValue().score);  
-                    }  
-        };  
-        Collections.sort(list, comparator);  
-        for(Map.Entry<String, Player> entry:list){  
-                System.out.println(entry.getValue().name + ":" + entry.getValue().score);  
-        }  
+public static void main(String[] args){  
+    Map<String, Player> map = new HashMap<String, Player>();  
+    Player p1 = new Player("John", 1000);  
+    Player p2 = new Player("Ben", 3000);  
+    Player p3 = new Player("Jack", 2000);  
+    map.put(p1);  
+    map.put(p2);  
+    map.put(p3);  
+    //将Map里面的所以元素取出来先变成一个set，然后将这个set装到一个list里面  
+    List<Map.Entry<String, Player>> list = new ArrayList<Map.Entry<String, Player>>(map.entrySet());  
+    //定义一个comparator  
+    Comparator<Map.Entry<String, Player>> comparator = new Comparator<Map.Entry<String, Player>>(){  
+            [@Override](/user/Override)  
+            public int compare(Entry<String, Player> p1, Entry<String, Player> p2){  
+                    //之所以使用减号，是想要按照分数从高到低来排列  
+                    return -(p1.getValue().score - p2.getValue().score);  
+                }  
+    };  
+    Collections.sort(list, comparator);  
+    for(Map.Entry<String, Player> entry:list){  
+            System.out.println(entry.getValue().name + ":" + entry.getValue().score);  
     }  
+}  
 }  
 
 class Player{  
-    String name;  
-    int score;   
-    public Player(String name, int score){  
-        this.name == name;  
-        this.score == score;    
-    }     
+String name;  
+int score;   
+public Player(String name, int score){  
+    this.name == name;  
+    this.score == score;    
+}     
 }
 ```
 这样排序下来，最后就会输出如下内容
 
-    Ben:3000
-    Jack:2000
-    John:1000
+Ben:3000
+Jack:2000
+John:1000
 
 说到最后总结一下，其实所有的集合排序最后都可以转换为List的排序，因为Collections本身提供了对List排序的支持。
 Map可以变为set，set可以变为list，所以都可以变为list。

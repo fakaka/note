@@ -6,15 +6,15 @@ module.exports = {
     port: 3005,
     // serviceWorker: true,
     themeConfig: {
-        repo: 'fakaka/Note',
+        repo: 'fakaka/note',
         // lastUpdated: '最近更新',
         nav: [
             {
                 text: 'Java',
                 items: [
                     {
-                        text: 'Java',
-                        link: '/Java/'
+                        text: 'Java base',
+                        link: '/Java/base/'
                     },
                     {
                         text: 'Java web',
@@ -44,7 +44,8 @@ module.exports = {
             }
         ],
         sidebar: {
-            '/Java/': genJavaGroup()
+            '/Java/base/': genJavaGroup(),
+            '/Java/framework/': ['/Java/Log-log4j']
         }
     }
 }
