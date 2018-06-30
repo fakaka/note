@@ -27,6 +27,23 @@ module.exports = {
                 ]
             },
             {
+                text: 'JavaScript',
+                items: [
+                    {
+                        text: 'Javascript',
+                        link: '/Javascript/'
+                    },
+                    {
+                        text: 'Vue',
+                        link: '/Javascript/vue/'
+                    },
+                    {
+                        text: 'Node',
+                        link: '/Javascript/node/'
+                    }
+                ]
+            },
+            {
                 text: '数据库',
                 link: '/Database/'
             },
@@ -45,14 +62,15 @@ module.exports = {
         ],
         sidebar: {
             '/Java/base/': genJavaGroup(),
-            '/Java/framework/': ['/Java/Log-log4j']
+            '/Java/framework/': ['/Java/framework/value_is_null'],
+            '/Javascript/vue/': ['/Javascript/vue/Vue-cli']
         }
     }
 }
 
 function genJavaGroup() {
     return [
-        '/Java/',
+        '/Java/base/',
         {
             title: 'Collection',
             // collapsable: false,
