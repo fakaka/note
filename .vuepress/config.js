@@ -48,16 +48,12 @@ module.exports = {
                 link: '/Database/'
             },
             {
-                text: '环境安装',
-                link: '/install/'
-            },
-            {
-                text: '面试',
-                link: '/Interview/'
-            },
-            {
                 text: '设计模式',
                 link: '/design-pattern/'
+            },
+            {
+                text: '环境安装',
+                link: '/install/'
             }
         ],
         sidebar: {

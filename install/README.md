@@ -8,6 +8,7 @@
 - [Solr](./Solr.md)
 - [Tomcat-集群](./Tomcat-集群.md)
 - [travis-ci](./travis-ci.md)
+- [Zookeeper](./Zookeeper.md)
 
 
 # Todo
@@ -17,13 +18,13 @@
     - [ ] 乌班图
 - [ ] jdk的安装
 - [ ] mysql
-- [ ] tomcat
 - [ ] nginx
 - [ ] svn
 - [ ] git
 - [ ] redis
-- [ ] active
-- [ ] windows下maven私服
+- [ ] activemq
+- [ ] windows 下 maven 私服
 - [ ] MongoDB
 - [ ] Solr
+- [ ] PostgreSQL
 

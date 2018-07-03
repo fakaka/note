@@ -1,12 +1,12 @@
 # Tomcat - 集群
 
 ## 软硬件环境
-
-    windows 10 64bit
-    tomcat 7.0 64bit
-    httpd 2.4 64bit
-    mod_jk 需要与 httpd 对应
-
+::: tip  软硬件环境
+windows 10 64bit   
+tomcat 7.0 64bit  
+httpd 2.4 64bit  
+mod_jk 需要与 httpd 对应  
+::: 
 ### httpd
 http://archive.apache.org/dist/httpd/binaries/win32/  
 
@@ -19,17 +19,18 @@ http://httpd.apache.org/docs/current/platform/windows.html#down
 集群示意图.png
 
 ### 文件结构
-    > httpd
-    > tomcat1
-    > tomcat2
-
+```
+> httpd
+> tomcat1
+> tomcat2
+```
 ## 配置 Apache 和 mod_jk
 
 1. 把 mod_jk.so 解压到 `httpd/conf/` 下
 
 2. 在 `C:\cluster\httpd\conf` 目录下创建一个 `mod_jk.conf`  
 mod_jk.conf
-```
+``` conf
 #加载mod_jk Module
 LoadModule jk_module modules/mod_jk.so
 
@@ -78,7 +79,7 @@ worker.controller.sticky_session=false
 worker.controller.sticky_session_force=1
 ``` 
 
-4. 修改 `C:\cluster\httpd\conf\httpd.conf` 在其最后添加如下内容:
+1. 修改 `C:\cluster\httpd\conf\httpd.conf` 在其最后添加如下内容:
 ```
 Include conf/mod_jk.conf
 ```
@@ -90,9 +91,9 @@ Include conf/mod_jk.conf
 
 1. 修改 `tomcat1\conf\server.xml`  
 
-    在配置`<Engine>`中添加 `jvmRoute="tomcat1"` ,名称 `worker.controller.balanced_workers=tomcat1,tomcat2` 对应
+    在配置`<Engine>`中添加 `jvmRoute="tomcat1"` ,名称与 `worker.controller.balanced_workers=tomcat1,tomcat2` 对应
 
-2. 在\<Engine\>下添加如下内容
+2. 在 `<Engine>` 下添加如下内容
 ``` xml
 <Cluster className="org.apache.catalina.ha.tcp.SimpleTcpCluster" channelSendOptions="8">
 
@@ -133,20 +134,19 @@ Include conf/mod_jk.conf
     <ClusterListener className="org.apache.catalina.ha.session.ClusterSessionListener"/>
 </Cluster>
 ```
-3. 第一个tomcat配置完成
+3. 第一个 tomcat 配置完成
 
-4. 然后再修改第二个tomcat  
+4. 然后再修改第二个 tomcat  
 
-    修改 `C:\cluster\tomcat2\conf\server.xml` ,在配置`<Engine>`中添加 `jvmRoute="tomcat2"`,  
-    名称与 `worker.controller.balanced_workers=tomcat1,tomcat2` 对应
+修改 `C:\cluster\tomcat2\conf\server.xml` ,在配置`<Engine>`中添加 `jvmRoute="tomcat2"`,  名称与 `worker.controller.balanced_workers=tomcat1,tomcat2` 对应
 
-1. 然后再 `<Engine>`下添加和 tomcat1 相同的配置:
+5. 然后再 `<Engine>` 下添加和 tomcat1 相同的配置:
 
 
 ### 注意：
-因为在一台机器上部署两台 tomcat，所以需要修改第二个tomcat的端口，不然会产生冲突
-```
-然后修改http1.1的端口，默认是8080
+因为在一台机器上部署两台 tomcat，所以需要修改第二个 tomcat 的端口，不然会产生冲突
+``` xml
+然后修改http1.1的端口，默认是8080 ???????
 <Server port="9005" shutdown="SHUTDOWN"> 默认为：8005
 
 最后修改AJP1.3端口，默认是8009
