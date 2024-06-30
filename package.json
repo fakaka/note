@@ -4,9 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "dev": "vuepress dev",
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "docs:build": "vuepress build docs"
+        "dev": "vitepress dev",
+        "docs:build": "vitepress build "
     },
     "repository": {
         "type": "git",
@@ -18,7 +17,7 @@
         "url": "https://github.com/fakaka/Note/issues"
     },
     "homepage": "https://github.com/fakaka/Note#readme",
-    "dependencies": {
-        "vuepress": "^0.10.1"
+    "devDependencies": {
+        "vitepress": "^1.2.3"
     }
 }
